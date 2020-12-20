@@ -7,6 +7,7 @@ package com.uwe_hennig.homotopy;
 
 /**
  * TriFunction
+ * 
  * @author Uwe Hennig
  */
 @FunctionalInterface
