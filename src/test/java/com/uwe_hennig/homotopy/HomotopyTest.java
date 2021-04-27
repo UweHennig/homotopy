@@ -30,14 +30,17 @@ public class HomotopyTest {
         Function<Double, Double> h1 = homotopyFunction.apply(1.0D);
         Function<Double, Double> h05 = homotopyFunction.apply(0.5D);
 
+        // test if h0 = f
         assertEquals("H0(x): Different values for x = 0.0D!", f.apply(0.0D), h0.apply(0.0D), 0.0001D);
         assertEquals("H0(x): Different values for x = 10.0D!", f.apply(10.0D), h0.apply(10.0D), 0.0001D);
         assertEquals("H0(x): Different values for x = 15.0D!", f.apply(15.0D), h0.apply(15.0D), 0.0001D);
 
+        // test if h1 = g
         assertEquals("H1(x): Different values for x = 0.0D!", g.apply(0.0D), h1.apply(0.0D), 0.0001D);
         assertEquals("H1(x): Different values for x = 10.0D!", g.apply(10.0D), h1.apply(10.0D), 0.0001D);
         assertEquals("H1(x): Different values for x = 15.0D!", g.apply(15.0D), h1.apply(15.0D), 0.0001D);
 
+        // test if h0.5 = (f+g)/2
         assertEquals("H05(x): Different values for x = 0.0D!", (g.apply(0.0D) + f.apply(0.0D)) / 2.0D, h05.apply(0.0D), 0.0001D);
         assertEquals("H05(x): Different values for x = 10.0D!", (g.apply(10.0D) + f.apply(10.0D)) / 2.0D, h05.apply(10.0D), 0.0001D);
         assertEquals("H05(x): Different values for x = 15.0D!", (g.apply(15.0D) + f.apply(15.0D)) / 2.0D, h05.apply(15.0D), 0.0001D);

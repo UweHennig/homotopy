@@ -13,8 +13,8 @@ import java.util.function.Function;
  * @author Uwe Hennig
  */
 public class Homotopy {
-	public static <T, U, V, R> Function<V, R> homotopy(TriFunction<T, U, V, R> f, T x, U y) {
-		return z -> f.apply(x, y, z);
+	public static <T, U, V, R> Function<V, R> homotopy(TriFunction<T, U, V, R> h, T f, U g) {
+		return z -> h.apply(f, g, z);
 	}
 
 	public static Function<Double, Double> hLinear(Function<Double, Double> f, Function<Double, Double> g, Double t) {
